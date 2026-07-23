@@ -383,4 +383,18 @@ ngrok http 8080
 
 ## 📄 License
 
-MIT License — feel free to fork and use this project.
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for the full text.
+
+```
+MIT License  Copyright (c) 2026 Z3us7
+```
+
+You are free to:
+- ✅ Use this project commercially
+- ✅ Modify the source code
+- ✅ Distribute copies
+- ✅ Use it privately
+- ✅ Sublicense it
+
+Under the condition that you **include the original copyright notice and license** in any copy or substantial portion of the software.
+
