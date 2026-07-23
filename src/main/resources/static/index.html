@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Gateway — Webhook Test</title>
+  <meta name="description" content="Razorpay frontend bridge for testing Spring Boot webhook integration." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="scene">
+    <!-- Database Side Panel -->
+    <div class="database">
+      <div class="database__header">
+        <div class="database__icon">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2C6.48 2 2 4.24 2 7c0 2.37 3.32 4.35 7.72 4.88.74.09 1.5.12 2.28.12s1.54-.03 2.28-.12C18.68 11.35 22 9.37 22 7c0-2.76-4.48-5-10-5zm0 17c-3.1 0-5.88-.66-7.72-1.76V15c1.23.86 3.03 1.5 5 1.83.88.14 1.79.21 2.72.21s1.84-.07 2.72-.21c1.97-.33 3.77-.97 5-1.83v2.24C17.88 18.34 15.1 19 12 19zm10-7v2.24c-1.84 1.1-4.62 1.76-7.72 1.76s-5.88-.66-7.72-1.76V12c1.23.86 3.03 1.5 5 1.83.88.14 1.79.21 2.72.21s1.84-.07 2.72-.21c1.97-.33 3.77-.97 5-1.83zM2 12c0 2.76 4.48 5 10 5s10-2.24 10-5"/></svg>
+        </div>
+        <div class="terminal__title">POSTGRES DB</div>
+      </div>
+      <div class="database__content">
+        <div style="padding: 8px 12px; font-size: 11px; color: rgba(255,255,255,0.5); text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); font-style: italic;">
+          *This panel is a UI simulation. The real database is securely isolated in the backend.*
+        </div>
+        <table class="db-table" id="dbTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>AMT</th>
+              <th>STATUS</th>
+              <th>RZP_ORDER</th>
+            </tr>
+          </thead>
+          <tbody id="dbTbody">
+            <!-- Rows appended dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Main Payment Card -->
+    <div class="card">
+      <div class="wordmark">
+        <span class="wordmark__eyebrow">Webhook Integration <span class="badge">TEST</span></span>
+        <span class="wordmark__title">Payment Gateway</span>
+        <span class="wordmark__sub">Razorpay &middot; Spring Boot &middot; Test Bridge</span>
+      </div>
+
+      <!-- Minimal Status Pill (Replacing the old HUD) -->
+      <div class="status-pill" id="statusPill">
+        <div class="status-pill__dot" id="statusDot"></div>
+        <span class="status-pill__text" id="statusText">STANDBY</span>
+      </div>
+
+      <!-- Reactive Amount Input -->
+      <div class="amount-display">
+        <span class="amount-display__currency">₹</span>
+        <input type="number" id="amountInput" class="amount-display__input" value="500" min="1" step="1">
+      </div>
+
+      <!-- CTA -->
+      <button id="payBtn">Initiate Test Payment</button>
+
+      <p class="footer-note">Secured by Razorpay &middot; Webhook sync monitored</p>
+    </div>
+
+    <!-- Terminal Sidebar -->
+    <div class="terminal">
+      <div class="terminal__header">
+        <div class="terminal__dots">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="terminal__title">SYSTEM LOGS</div>
+      </div>
+      <div class="terminal__content" id="terminalContent">
+        <div class="log-line sys">System initialized. Awaiting user action.</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
