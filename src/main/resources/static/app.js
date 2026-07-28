@@ -1,8 +1,7 @@
-// ⚠️ Replace this with your own Razorpay Test Key ID from https://dashboard.razorpay.com/
-// Never commit real keys to version control.
-const RAZORPAY_KEY = 'YOUR_RAZORPAY_TEST_KEY_ID'; // e.g. rzp_test_xxxxxxxxxxxxxxxxxx
 
-const ORDER_ENDPOINT = 'http://localhost:8080/api/v1/orders'; //YOUR_RAZORPAY_TEST_KEY_HERE
+const RAZORPAY_KEY = 'rzp_test_TFO0JGyqfvuSSY'; // ← your Razorpay test key ID
+
+const ORDER_ENDPOINT = 'https://payment-webhook-api.onrender.com/api/v1/orders'; // Note: Ensure this URL exactly matches your Render deployment URL
 
 
 // ─── DOM refs ───
