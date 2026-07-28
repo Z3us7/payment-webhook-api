@@ -1,7 +1,7 @@
 
 const RAZORPAY_KEY = 'rzp_test_TFO0JGyqfvuSSY'; // ← your Razorpay test key ID
 
-const ORDER_ENDPOINT = 'https://payment-webhook-api.onrender.com/api/v1/orders'; // Note: Ensure this URL exactly matches your Render deployment URL
+const ORDER_ENDPOINT = 'https://payment-webhook-api-kp40.onrender.com/api/v1/orders'; // Note: Ensure this URL exactly matches your Render deployment URL
 
 
 // ─── DOM refs ───
